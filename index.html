@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<title>Parallax Web Scroll 2</title>
+<meta charset="utf-8">
+<style type="text/css" rel="stylesheet" id="mandioca">
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	/*background-image: url('fantasy-girl-in-spring-wallpaper(www.CoolWallpapers.org).jpg');*/
+	background-image: url('1.jpeg');
+	background-position: 50% 0px;
+	background-attachment: fixed;
+	/*background-repeat: no-repeat;*/
+}
+
+#wrapper {
+	margin-left: 50%;
+}
+#content {
+	margin-left: -400px;
+	width: 800px;
+}
+
+#content article {
+	-webkit-border-radius: 16px 16px 16px 16px;
+	border-radius: 16px 16px 16px 16px;
+	/*-webkit-box-shadow: 0px 0px 8px 0px rgb(255,255,255) inset;
+	box-shadow: 0px 0px 8px 0px rgb(255,255,255) inset;*/
+	-webkit-box-shadow: 8px 8px 24px 2px rgb(20,20,45);
+	box-shadow:			8px 8px 24px 2px rgb(20,20,45);
+	border: 1px solid rgba(200,200,255,0.7);
+	background: rgba(255,255,255,0.2);
+	background-position: 50% 0px;
+	background-attachment: fixed;
+	/*background-repeat: no-repeat;*/
+	padding: 12px;
+	margin-top: 128px;
+	color: #000;
+}
+
+
+#content article h2 {
+	color: #000;
+}
+
+#content article code{
+	color: #008;
+}
+
+#imageList {
+	position: fixed;
+	right: 4px;
+	top: 4px;
+	padding: 6px;
+	background: rgba(10,10,700,0.6);
+	color: #fff;
+	text-align: center;
+}
+
+#imageList button {
+	display: block;
+}
+
+</style>
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="StackBlur.js"></script>
+<script type="text/javascript" src="parallax2.js"></script>
+<script type="text/javascript">
+
+parallax2.configure(
+{
+	articleSelector:'#content article',
+	backgroundSelector:'body'
+} );
+
+</script>
+
+</head>
+<body>
+<nav id="imageList">
+	<b>Selecione</b><br/>
+	<button onclick="parallax2.update('2.jpeg');">Image 01</button>
+	<button onclick="parallax2.update('4.jpeg');">Image 02</button>
+	<button onclick="parallax2.update('fantasy-girl-in-spring-wallpaper(www.CoolWallpapers.org).jpg');">Image 03</button>
+	<button onclick="parallax2.update('1.jpeg');">Image 04</button>
+	<br />
+	<img src="ajax-loader.gif" id="ajaxLoader" width="32" height="32" alt="loader" style="display:none;" />
+	<script type="text/javascript">
+		parallax2.
+			bind('done', function(e, dt) { $('#ajaxLoader').hide() } ).
+			bind('init', function(e, dt) { $('#ajaxLoader').show() } );
+	</script>
+</nav>
+<div id="wrapper">
+	<section id="content">
+		<article>
+			<header>
+				<h2>Tutorial</h2>
+			</header>
+			<p>Insira a folha de estilos</p>
+			<code>&lt;style type="text/css" rel="stylesheet"&gt;<br/>
+			/* estilo principal */<br />
+			body {
+			<blockquote>
+				background-image: url('fantasy-girl-in-spring-wallpaper(www.CoolWallpapers.org).jpg');<br />
+				background-position: 50% 0px;<br />
+				background-attachment: fixed;<br />
+				background-repeat: no-repeat;
+			</blockquote>
+			}<br/>
+			<br />
+			article {
+			<blockquote>
+			background-attachment: fixed;<br />
+			background-repeat: no-repeat;
+			</blockquote>
+			}<br />
+			&lt;/style&gt;
+			</code>
+			<p>Chame o Javascript</p>
+			<code>
+				&lt;script type="text/javascript" src="jquery.min.js"&gt;&lt;/script&gt;<br/>
+				&lt;script type="text/javascript" src="StackBlur.js"&gt;&lt;/script&gt;<br/>
+				&lt;script type="text/javascript" src="parallax2.js"&gt;&lt;/script&gt;<br/>
+			</code>
+			<p>Diga como é seu CSS:</p>
+			<code>
+				&lt;script type="text/javascript" &gt;<br/>
+				parallax2.configure(<br/>
+				{<br/>
+				<blockquote>
+					// O post no CSS, exemplo article ou .post-data<br />
+					articleSelector:'#content article',<br/>
+					// Onde vem a imagem de fundo, em geral é body mesmo<br />
+					backgroundSelector:'body'<br />
+					<u>// Opcionalmente você pode desativar o scroll e ter mais controle no CSS<br />
+					<i>,disableScroll: true</i></u>
+				</blockquote>
+				} );<br/>
+				&lt;/script&gt;<br/>
+			</code>
+			<p>	Página do projeto
+				<a href="https://github.com/marcosbitetti/ParallaxWebScroll2">GitHub - Parallax Web Scroll 2</a>
+			</p>
+			<aside>
+				<header>Resources:</header>
+				<b>Imagens </b><a href="http://www.desktopnexus.com/tag/elf/7" target="_blank">http://www.desktopnexus.com/tag/elf/</a><br />
+				<b>Blur filter </b><a href="http://www.quasimondo.com/StackBlurForCanvas" target="_blank">http://www.quasimondo.com/StackBlurForCanvas</a>
+			</aside>
+		</article>
+		
+		<article>
+			<header>
+				<h2>Lorem ipsum dolor</h2>
+			</header>
+			<p><b>Lorem ipsum dolor sit amet,</b> consectetur adipiscing elit. Donec id gravida metus. Vestibulum bibendum bibendum risus in suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam commodo turpis et lacus lacinia interdum. Quisque sed mollis odio. Nullam laoreet purus sit amet massa sodales ut pellentesque neque accumsan. Praesent pretium lectus quis ligula pulvinar laoreet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer venenatis elit sed metus rhoncus at rhoncus purus tincidunt. Donec sed sapien id tellus consequat auctor. Nullam aliquam velit et metus fringilla dignissim. Ut sed risus in massa porttitor sollicitudin nec ac risus.</p>
+		</article>
+	</section>
+</div>
+
+<script type="text/javascript">
+var ref = $($('article')[1]);
+for( var i=0; i<20; i++)
+{
+	$('#content').append('<article>'+ref.html()+'</article>');
+}
+</script>
+</body>
+
+</html>
